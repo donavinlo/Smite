@@ -7,6 +7,7 @@ summary_df = pd.read_csv('Data\\Summary.csv')
 
 #Remove uneccessary column
 summary_df.drop('Unnamed: 0', axis = 1, inplace = True)
+summary_df.info()
 
 #Clean Game Mode Column so we recieve the game type and ranked or unranked
 columns= summary_df['Game Mode'].str.split(' ', expand = True)
