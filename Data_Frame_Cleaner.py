@@ -2,7 +2,7 @@ import pandas as pd
 import string as str
 import numpy as np
 ############################################# Work on Summary DataFrame ################################################
-summary_df = pd.read_csv('Data\\Summary.csv')
+summary_df = pd.read_csv('Summary.csv')
 
 
 #Remove uneccessary column
