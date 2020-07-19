@@ -2,12 +2,11 @@ import pandas as pd
 import string as str
 import numpy as np
 ############################################# Work on Summary DataFrame ################################################
-summary_df = pd.read_csv('data/Summary.csv')
+summary_df = pd.read_csv('Data/Summary.csv')
 
 
 #Remove uneccessary column
 summary_df.drop('Unnamed: 0', axis = 1, inplace = True)
-summary_df.info()
 
 #Clean Game Mode Column so we recieve the game type and ranked or unranked
 columns= summary_df['Game Mode'].str.split(' ', expand = True)
@@ -99,17 +98,15 @@ def create_class(df, god_col):
     Assassin = ('Arachne', 'Awilix', 'Bakasura', 'Bastet', 'Camazotz', 'Da Ji', 'Fenrir', 'Hun Batz', 'Kali', 'Loki',
                 'Mercury', 'Ne Zha', 'Nemesis', 'Pele', 'Ratatoskr', 'Ravana', 'Serqet', 'Set', 'Susano', 'Thanatos',
                 'Thor')
-    Mage = ('Agni', 'Ah Puch', 'Anubis', 'Ao Kuang', 'Aphrodite', 'Baba Yaga', 'Baron Samedi', 'Chang\'e', 'Chronos',
-            'Discordia', 'Freya','Hades', 'He Bo', 'Hel', 'Hera', 'Isis', 'Janus', 'Kukulkan', 'Merlin', 'Nox', 'Nu Wa',
-            'Olorun', 'Poseidon','Persephone', 'Ra', 'Raijin', 'Scylla', 'Sol', 'The Morrigan', 'Thoth', 'Vulcan', 'Zeus',
-            'Zhong Kui')
+    Mage = ('Agni', 'Ah Puch', 'Anubis', 'Ao Kuang', 'Aphrodite', 'Baron Samedi', 'Chang\'e', 'Chronos', 'Discordia', 'Freya',
+           'Hades', 'He Bo', 'Hel', 'Hera', 'Isis', 'Janus', 'Kukulkan', 'Merlin', 'Nox', 'Nu Wa', 'Olorun', 'Poseidon',
+           'Ra', 'Raijin', 'Scylla', 'Sol', 'The Morrigan', 'Thoth', 'Vulcan', 'Zeus', 'Zhong Kui')
     Hunter = ('Ah Muzen Cab', 'Anhur', 'Apollo', 'Artemis', 'Cernunnos', 'Chernobog', 'Chiron', 'Cupid', 'Hachiman',
               'Hou Yi', 'Izanami', 'Jing Wei', 'Medusa', 'Neith', 'Rama', 'Skadi', 'Ullr', 'Xbalanque')
-    Warrior = ('Achilles', 'Amaterasu', 'Bellona', 'Chaac', 'Cu Chulainn', 'Erlang Shen', 'Guan Yu', 'Heimdallr',
-               'Hercules', 'Horus','King Arthur', 'Mulan', 'Nike', 'Odin', 'Osiris', 'Sun Wukong', 'Tyr', 'Vamana')
-    Guardian = ('Ares', 'Artio', 'Athena', 'Bacchus', 'Cabrakan', 'Cerberus', 'Cthulu', 'Fafnir', 'Ganesha', 'Geb',
-                'Jormungandr','Khepri', 'Kumbhakarna', 'Kuzenbo', 'Sobek', 'Sylvanus', 'Terra', 'Xing Tian', 'Yemoja',
-                'Ymir')
+    Warrior = ('Achilles', 'Amaterasu', 'Bellona', 'Chaac', 'Cu Chulainn', 'Erlang Shen', 'Guan Yu', 'Hercules', 'Horus',
+               'King Arthur', 'Nike', 'Odin', 'Osiris', 'Sun Wukong', 'Tyr', 'Vamana')
+    Guardian = ('Ares', 'Artio', 'Athena', 'Bacchus', 'Cabrakan', 'Cerberus', 'Fafnir', 'Ganesha', 'Geb', 'Jormungandr',
+                'Khepri', 'Kumbhakarna', 'Kuzenbo', 'Sobek', 'Sylvanus', 'Terra', 'Xing Tian', 'Ymir')
 
     #Get class types for gods
     classes = [Assassin, Mage, Hunter, Warrior, Guardian]
